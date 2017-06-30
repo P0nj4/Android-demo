@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         boolean isAvailable = networkInfo != null && networkInfo.isConnected();
         return isAvailable;
-
     }
+
+    
 }

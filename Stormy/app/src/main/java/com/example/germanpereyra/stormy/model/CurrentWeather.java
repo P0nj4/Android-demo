@@ -1,5 +1,6 @@
 package com.example.germanpereyra.stormy.model;
 
+import com.example.germanpereyra.stormy.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
@@ -16,6 +17,52 @@ public class CurrentWeather {
     private double precipitationChance;
     private String summary;
     private String timeZone;
+    private int resourceIconId;
+
+    public int getResourceIconId() {
+        if (resourceIconId == 0) {
+
+            resourceIconId = R.drawable.clear_day;
+            String mIcon = this.icon;
+
+            if (mIcon.equals("clear-day")) {
+                resourceIconId = R.drawable.clear_day;
+            }
+            else if (mIcon.equals("clear-night")) {
+                resourceIconId = R.drawable.clear_night;
+            }
+            else if (mIcon.equals("rain")) {
+                resourceIconId = R.drawable.rain;
+            }
+            else if (mIcon.equals("snow")) {
+                resourceIconId = R.drawable.snow;
+            }
+            else if (mIcon.equals("sleet")) {
+                resourceIconId = R.drawable.sleet;
+            }
+            else if (mIcon.equals("wind")) {
+                resourceIconId = R.drawable.wind;
+            }
+            else if (mIcon.equals("fog")) {
+                resourceIconId = R.drawable.fog;
+            }
+            else if (mIcon.equals("cloudy")) {
+                resourceIconId = R.drawable.cloudy;
+            }
+            else if (mIcon.equals("partly-cloudy-day")) {
+                resourceIconId = R.drawable.partly_cloudy;
+            }
+            else if (mIcon.equals("partly-cloudy-night")) {
+                resourceIconId = R.drawable.cloudy_night;
+            }
+
+        }
+        return resourceIconId;
+    }
+
+    public void setResourceIconId(int resourceIconId) {
+        this.resourceIconId = resourceIconId;
+    }
 
     public String getTimeZone() {
         return timeZone;
