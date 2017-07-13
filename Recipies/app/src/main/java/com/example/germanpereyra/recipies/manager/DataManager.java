@@ -12,6 +12,11 @@ import java.util.List;
 public class DataManager {
 
     private static final DataManager ourInstance = new DataManager();
+    public static final String TRENDING = "TRENDING";
+    public static final String NEWEST = "NEWEST";
+    public static final String HOTTEST = "HOTTEST";
+    public static final String ALLRECIPES = "ALLRECIPES";
+
 
     public static DataManager getInstance() {
         return ourInstance;
@@ -22,7 +27,7 @@ public class DataManager {
 
     private List<Recipe> mRecipes;
 
-    public List<Recipe> getRecipies() {
+    public List<Recipe> getRecipiesByKind(String kindOfRecipe) {
         if (mRecipes != null)
                 return mRecipes;
 

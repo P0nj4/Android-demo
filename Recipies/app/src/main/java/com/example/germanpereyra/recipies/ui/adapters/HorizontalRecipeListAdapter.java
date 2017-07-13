@@ -2,6 +2,7 @@ package com.example.germanpereyra.recipies.ui.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.germanpereyra.recipies.model.Recipe;
 import com.example.germanpereyra.recipies.R;
+import com.example.germanpereyra.recipies.ui.sharedInterfaces.OnRecipeSelectedListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,9 +22,11 @@ import java.util.List;
 public class HorizontalRecipeListAdapter extends RecyclerView.Adapter<HorizontalRecipeListAdapter.HorizontalRecipeListViewHolder> {
 
     private List<Recipe> recipes;
+    private OnRecipeSelectedListener mListener;
 
-    public HorizontalRecipeListAdapter(List<Recipe> recipes) {
+    public HorizontalRecipeListAdapter(List<Recipe> recipes, OnRecipeSelectedListener listener) {
         this.recipes = recipes;
+        this.mListener = listener;
     }
 
     @Override
@@ -42,7 +46,7 @@ public class HorizontalRecipeListAdapter extends RecyclerView.Adapter<Horizontal
         return recipes.size();
     }
 
-    public class HorizontalRecipeListViewHolder extends RecyclerView.ViewHolder {
+    public class HorizontalRecipeListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView recipeName;
         private ImageView recipeImage;
@@ -51,6 +55,7 @@ public class HorizontalRecipeListAdapter extends RecyclerView.Adapter<Horizontal
         public HorizontalRecipeListViewHolder(View itemView, Context context) {
             super(itemView);
             mContext = context;
+            itemView.setOnClickListener(this);
             recipeName = (TextView) itemView.findViewById(R.id.recipe_list_item_small_name);
             recipeImage = (ImageView) itemView.findViewById(R.id.recipe_list_item_small_image);
             recipeImage.setClipToOutline(true);
@@ -63,6 +68,14 @@ public class HorizontalRecipeListAdapter extends RecyclerView.Adapter<Horizontal
                     .resize(122, 122)
                     .centerCrop()
                     .into(recipeImage);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Context context = v.getContext();
+            int position = getAdapterPosition();
+            Recipe recipe = recipes.get(position);
+            mListener.openRecipeDetail(recipe);
         }
     }
 

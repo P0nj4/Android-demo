@@ -1,13 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!--Material design primary colors-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">#383838</item>
+        <item name="actionBarTheme">@style/AppBaseTheme.Toolbar</item>
     </style>
-    
+
+    <!--Action bar-->
+    <style name="AppBaseTheme.Toolbar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:textColorPrimary">#5C5C5B</item>
+        <item name="colorControlNormal">#51D05D</item>
+    </style>
+
     <style name="TextAppearance.Fresca" parent="android:TextAppearance">
         <!-- Custom Attr-->
         <item name="fontPath">fonts/Fresca-Regular.ttf</item>
