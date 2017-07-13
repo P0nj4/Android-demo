@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/recipe_grid_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8.5dp"
+        android:layout_marginRight="8.5dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:background="@drawable/image_rounded_corners"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/macaroni"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/recipe_grid_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.Fresca"
+        android:textColor="#161616"
+        tools:text="Cannabis Coconut Oil" />
+</LinearLayout>

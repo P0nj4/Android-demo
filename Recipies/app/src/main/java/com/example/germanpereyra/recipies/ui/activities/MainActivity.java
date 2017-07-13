@@ -12,6 +12,7 @@ import com.example.germanpereyra.recipies.R;
 import com.example.germanpereyra.recipies.manager.DataManager;
 import com.example.germanpereyra.recipies.model.Recipe;
 import com.example.germanpereyra.recipies.ui.fragments.HorizontalRecipiesListFragment;
+import com.example.germanpereyra.recipies.ui.fragments.VerticalRecipesListFragment;
 import com.example.germanpereyra.recipies.ui.sharedInterfaces.OnRecipeSelectedListener;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -23,10 +24,24 @@ public class MainActivity extends AppCompatActivity implements OnRecipeSelectedL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupNewestRecipesContent();
+        setupTrendingRecipesContent();
+
+    }
+
+    private void setupNewestRecipesContent() {
         HorizontalRecipiesListFragment horizontalRecipiesListFragment = HorizontalRecipiesListFragment.newInstance(DataManager.NEWEST);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.horizontalScrollFragment, horizontalRecipiesListFragment);
+        fragmentTransaction.add(R.id.newestHorizontalScroll, horizontalRecipiesListFragment);
+        fragmentTransaction.commit();
+    }
+
+    private void setupTrendingRecipesContent() {
+        VerticalRecipesListFragment  verticalRecipesListFragment = VerticalRecipesListFragment.newInstance(DataManager.TRENDING);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.trendingVerticalScroll, verticalRecipesListFragment);
         fragmentTransaction.commit();
     }
 

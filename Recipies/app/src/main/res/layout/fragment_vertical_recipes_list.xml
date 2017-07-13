@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.germanpereyra.recipies.ui.fragments.VerticalRecipesListFragment">
+
+    <TextView
+        android:id="@+id/fragment_vertical_recipies_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginBottom="9dp"
+        android:gravity="center_horizontal"
+        android:text="TRENDING"
+        android:textAppearance="@style/TextAppearance.BreeSerif"
+        android:textColor="#161616"
+        android:textSize="34sp" />
+
+    <GridView
+        android:id="@+id/fragment_vertical_recipies_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="columnWidth"
+        android:numColumns="2"/>
+
+
+</LinearLayout>

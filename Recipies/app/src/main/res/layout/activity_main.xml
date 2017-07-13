@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.germanpereyra.recipies.ui.activities.MainActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,12 +22,16 @@
 
 
         <FrameLayout
-            android:id="@+id/horizontalScrollFragment"
+            android:id="@+id/newestHorizontalScroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="wrap_content"></FrameLayout>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trendingVerticalScroll"></FrameLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
 
