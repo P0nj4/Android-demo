@@ -51,8 +51,8 @@ public class HorizontalRecipiesListFragment extends Fragment implements OnRecipe
         if (context instanceof OnRecipeSelectedListener) {
             mListener = (OnRecipeSelectedListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnRecipeSelectedListener");
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnRecipeSelectedListener");
         }
     }
 
